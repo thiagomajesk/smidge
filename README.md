@@ -29,19 +29,19 @@ View
 > Similar to how [Phoenix.HTML.Tag.content_tag/2](https://hexdocs.pm/phoenix_html/Phoenix.HTML.Tag.html#content_tag/2) works.
 
 ```html
-<template name="FooView:_form" role="fragment">
+<div name="foo_view:_form" role="fragment">
   <form>
       <!-- [...] -->
   </form>  
-</template>
-<template name="FooView:_sidebar" role="fragment">
+</div>
+<div name="foo_view:_sidebar" role="fragment">
   <aside>
       <!-- [...] -->
   <aside>
-</template>
-<template name="FooView:_topbar" role="fragment">
+</div>
+<div name="foo_view:_topbar" role="fragment">
   <nav>
       <!-- [...] -->
   <nav>
-</template>
+</div>
 ```

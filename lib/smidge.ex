@@ -71,7 +71,7 @@ defmodule Smidge do
       |> Smidge.content(smidge)
       |> Phoenix.HTML.html_escape()
       |> Phoenix.HTML.safe_to_string()
-      #=> "<template name=\"FooView:foo\" role=\"fragment\">foo</template>"
+      #=> "<div name=\"FooView:foo\" role=\"fragment\">foo</div>"
 
   """
   def content(%Smidge{fragments: fragments}) do
@@ -89,8 +89,8 @@ defmodule Smidge do
   defp fragment_tag(content, view, template) do
     resource = view.__resource__
     template = Path.rootname(template)
-    attrs = [role: "fragment", name: "#{resource}:#{template}"]
-    Phoenix.HTML.Tag.content_tag(:template, content, attrs)
+    attrs = [role: "fragment", name: Inflex.underscore("#{resource}:#{template}")]
+    Phoenix.HTML.Tag.content_tag(:div, content, attrs)
   end
 end
 

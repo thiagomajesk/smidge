@@ -21,7 +21,8 @@ defmodule Smidge.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix_html, "~> 2.14.0"}
+      {:phoenix_html, "~> 2.14.0"},
+      { :inflex, "~> 2.0.0" }
     ]
   end
 end

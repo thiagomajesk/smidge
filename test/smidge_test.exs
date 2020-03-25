@@ -52,7 +52,7 @@ defmodule SmidgeTest do
       |> Phoenix.HTML.html_escape()
       |> Phoenix.HTML.safe_to_string()
 
-    assert result == "<template name=\"FooView:foo\" role=\"fragment\">foo</template>"
+    assert result == "<div name=\"foo_view:foo\" role=\"fragment\">foo</div>"
   end
 
   test "set/1 changes current module" do
@@ -67,7 +67,7 @@ defmodule SmidgeTest do
       |> Phoenix.HTML.safe_to_string()
 
     assert result ==
-             "<template name=\"BarView:bar\" role=\"fragment\">bar</template><template name=\"FooView:foo\" role=\"fragment\">foo</template>"
+             "<div name=\"bar_view:bar\" role=\"fragment\">bar</div><div name=\"foo_view:foo\" role=\"fragment\">foo</div>"
   end
 
   test "merge/2 joins two Smidges" do
@@ -101,6 +101,6 @@ defmodule SmidgeTest do
       |> Phoenix.HTML.Safe.to_iodata()
       |> Phoenix.HTML.safe_to_string()
 
-    assert result == "<template name=\"FooView:foo\" role=\"fragment\">foo</template>"
+    assert result == "<div name=\"foo_view:foo\" role=\"fragment\">foo</div>"
   end
 end
